@@ -4,8 +4,8 @@ import { DOG_FIELD_LABELS, CAT_FIELD_LABELS } from '@/constants/fieldLabels'
 import renderField from './renderField'
 import Link from 'next/link'
 
-type BreedPageProps  = {
-  params: { id: string }
+type BreedPageProps = {
+  params: Promise<{ id: string;}>
 }
 
 export default async function BreedPage({ params }: BreedPageProps ) {
