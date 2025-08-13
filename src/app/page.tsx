@@ -8,7 +8,7 @@ import { Suspense } from 'react'
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-[32px] row-start-2 items-center p-6 bg-amber-50">
+    <main className="flex flex-col gap-[32px] row-start-2 items-center p-6 bg-amber-50 min-h-screen">
       <Suspense fallback={<Loading />}>
         <HomeContent />
       </Suspense>
