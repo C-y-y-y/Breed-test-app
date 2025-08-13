@@ -4,11 +4,11 @@ import { DOG_FIELD_LABELS, CAT_FIELD_LABELS } from '@/constants/fieldLabels'
 import renderField from './renderField'
 import Link from 'next/link'
 
-type Props = {
+type BreedPageProps  = {
   params: { id: string }
 }
 
-export default async function BreedPage({ params }: Props) {
+export default async function BreedPage({ params }: BreedPageProps ) {
   const { id } = await params
   const breed = await getBreedById(id)
 
