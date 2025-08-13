@@ -25,6 +25,10 @@ export default async function BreedPage({ params }: BreedPageProps ) {
   const pureId = id.split('-')[1]
   const images = await getBreedImages(breed.type, pureId)
 
+  const count = images.length >= 4 ? 4 : images.length >= 2 ? 2 : 1
+  const gridCols = count === 1 ? 'grid-cols-1' : 'grid-cols-2'
+  const gridRows = count === 1 ? 'grid-rows-1' : count === 2 ? 'grid-rows-1' : 'grid-rows-2'
+
   return (
     <main className="min-h-screen bg-amber-50">
       <Link
@@ -43,8 +47,8 @@ export default async function BreedPage({ params }: BreedPageProps ) {
           <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
         </svg>
       </Link>
-      <div className="relative w-screen aspect-[16/9] rounded overflow-hidden grid grid-cols-2 grid-rows-2">
-        {images.slice(0, 4).map((img, index) => (
+      <div className={`relative w-screen aspect-[16/9] rounded overflow-hidden grid ${gridCols} ${gridRows}`}>
+        {images.slice(0, count).map((img, index) => (
           <div key={img.id} className="relative">
             <Image
               src={img.url}

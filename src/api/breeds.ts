@@ -1,17 +1,17 @@
 import { BaseBreed, BreedType } from '@/types'
-import { getImageUrl, shuffle } from '@/utils'
+import { shuffle } from '@/utils'
 
 const DOG_API_URL = 'https://api.thedogapi.com/v1'
 const CAT_API_URL = 'https://api.thecatapi.com/v1'
 
 const formatBreeds = (items: BaseBreed[], type: BreedType) => (
-  items.map(breed => ({
-    id: `${type}-${breed.id}`,
-    type: type,
-    name: breed.name,
-    temperament: breed.temperament,
-    life_span: breed.life_span,
-    imageUrl: getImageUrl(type, breed.reference_image_id)
+  items.map(({ id, name, temperament, life_span, reference_image_id }) => ({
+    id: `${type}-${id}`,
+    type,
+    name,
+    temperament,
+    life_span,
+    imageId: reference_image_id
   }))
 )
 

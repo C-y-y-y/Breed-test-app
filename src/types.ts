@@ -10,5 +10,5 @@ export type BaseBreed = {
 
 export type Breed = Omit<BaseBreed, 'reference_image_id'> & {
   type: BreedType
-  imageUrl: string
+  imageId: string
 }

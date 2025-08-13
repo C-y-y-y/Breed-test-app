@@ -31,12 +31,13 @@ function HomeContent() {
         {isLoading ? (
           <Loading />
         ) : (
-          breeds.map((breed) => (
+          breeds.map(breed => (
             <BreedCard
               key={breed.id}
               id={breed.id}
               name={breed.name}
-              imageUrl={breed.imageUrl}
+              type={breed.type}
+              imageId={breed.imageId}
             />
           ))
         )}

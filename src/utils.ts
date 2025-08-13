@@ -12,7 +12,11 @@ export const shuffle = <T>(array: T[]): T[] => {
 export const getImageUrl = (
   type: BreedType,
   referenceImageId: string | undefined | null
-): string => {
-  if (!referenceImageId) return ''
-  return `https://cdn2.the${type}api.com/images/${referenceImageId}.jpg`
+): string[] => {
+  if (!referenceImageId) return []
+  return [
+    `https://cdn2.the${type}api.com/images/${referenceImageId}.jpg`,
+    `https://cdn2.the${type}api.com/images/${referenceImageId}.png`,
+    `https://cdn2.the${type}api.com/images/${referenceImageId}.webp`
+  ]
 }
