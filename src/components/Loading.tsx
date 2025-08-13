@@ -1,6 +1,6 @@
 export default function Loading() {
   return (
-    <div className="min-h-screen col-span-full">
+    <div className="col-span-full flex justify-center">
       <button type="button" className="flex items-center bg-amber-500 text-white px-4 py-2 rounded hover:bg-indigo-600 transition-colors duration-200">
         <svg 
           className="mr-3 -ml-1 size-5 animate-spin text-white" 
